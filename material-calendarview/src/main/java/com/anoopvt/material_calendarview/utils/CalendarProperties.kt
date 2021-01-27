@@ -33,25 +33,25 @@ class CalendarProperties(private val context: Context) {
         get() = if (field <= 0) field else context.parseColor(field)
 
     var selectionColor: Int = 0
-        get() = if (field == 0) context.parseColor(R.color.defaultColor) else field
+        get() = if (field == 0) context.parseColor(R.color.mc_defaultColor) else field
 
     var todayLabelColor: Int = 0
-        get() = if (field == 0) context.parseColor(R.color.defaultColor) else field
+        get() = if (field == 0) context.parseColor(R.color.mc_defaultColor) else field
 
     var todayColor: Int = 0
         get() = if (field <= 0) field else context.parseColor(field)
 
     var dialogButtonsColor: Int = 0
 
-    var itemLayoutResource: Int = R.layout.calendar_view_day
+    var itemLayoutResource: Int = R.layout.mc_calendar_view_day
 
-    var selectionBackground: Int = R.drawable.background_color_circle_selector
+    var selectionBackground: Int = R.drawable.mc_background_color_circle_selector
 
     var disabledDaysLabelsColor: Int = 0
-        get() = if (field == 0) context.parseColor(R.color.nextMonthDayColor) else field
+        get() = if (field == 0) context.parseColor(R.color.mc_nextMonthDayColor) else field
 
     var highlightedDaysLabelsColor: Int = 0
-        get() = if (field == 0) context.parseColor(R.color.nextMonthDayColor) else field
+        get() = if (field == 0) context.parseColor(R.color.mc_nextMonthDayColor) else field
 
     var pagesColor: Int = 0
 
@@ -60,13 +60,13 @@ class CalendarProperties(private val context: Context) {
     var abbreviationsLabelsColor: Int = 0
 
     var daysLabelsColor: Int = 0
-        get() = if (field == 0) context.parseColor(R.color.currentMonthDayColor) else field
+        get() = if (field == 0) context.parseColor(R.color.mc_currentMonthDayColor) else field
 
     var selectionLabelColor: Int = 0
         get() = if (field == 0) context.parseColor(android.R.color.white) else field
 
     var anotherMonthsDaysLabelsColor: Int = 0
-        get() = if (field == 0) context.parseColor(R.color.nextMonthDayColor) else field
+        get() = if (field == 0) context.parseColor(R.color.mc_nextMonthDayColor) else field
 
     var headerVisibility: Int = View.VISIBLE
 

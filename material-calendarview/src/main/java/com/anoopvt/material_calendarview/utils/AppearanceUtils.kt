@@ -19,7 +19,7 @@ internal fun View.setAbbreviationsLabels(color: Int, firstDayOfWeek: Int) {
     val labels = getAbbreviationsTextViews()
 
     val abbreviations =
-        context.resources.getStringArray(R.array.material_calendar_day_abbreviations_array)
+        context.resources.getStringArray(R.array.mc_material_calendar_day_abbreviations_array)
 
     labels.forEachIndexed { index, label ->
         label.text = abbreviations[(index + firstDayOfWeek - 1) % 7]

@@ -24,7 +24,7 @@ class DatePicker(
 ) {
 
     fun show(): DatePicker {
-        val view = LayoutInflater.from(context).inflate(R.layout.date_picker_dialog, null)
+        val view = LayoutInflater.from(context).inflate(R.layout.mc_date_picker_dialog, null)
 
         if (calendarProperties.pagesColor != 0) {
             view.setBackgroundColor(calendarProperties.pagesColor)
@@ -91,7 +91,7 @@ class DatePicker(
         val stateResource = if (enabled) {
             calendarProperties.dialogButtonsColor
         } else {
-            R.color.disabledDialogButtonColor
+            R.color.mc_disabledDialogButtonColor
         }
 
         okButton.setTextColor(ContextCompat.getColor(context, stateResource))

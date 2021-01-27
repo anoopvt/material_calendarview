@@ -1,14 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Calendar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="mc_Theme.Calendar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/defaultColor</item>
-        <item name="colorPrimaryVariant">@color/defaultColor</item>
+        <item name="colorPrimary">@color/mc_defaultColor</item>
+        <item name="colorPrimaryVariant">@color/mc_defaultColor</item>
         <item name="colorOnPrimary">@color/cardview_light_background</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/defaultColor</item>
-        <item name="colorSecondaryVariant">@color/defaultColor</item>
-        <item name="colorOnSecondary">@color/daysLabelColor</item>
+        <item name="colorSecondary">@color/mc_defaultColor</item>
+        <item name="colorSecondaryVariant">@color/mc_defaultColor</item>
+        <item name="colorOnSecondary">@color/mc_daysLabelColor</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

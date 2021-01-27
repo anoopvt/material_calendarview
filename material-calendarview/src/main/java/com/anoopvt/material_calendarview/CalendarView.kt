@@ -82,7 +82,7 @@ class CalendarView @JvmOverloads constructor(
 
     private fun initControl(calendarProperties: CalendarProperties, onUiCreate: () -> Unit) {
         this.calendarProperties = calendarProperties
-        LayoutInflater.from(context).inflate(R.layout.calendar_view, this)
+        LayoutInflater.from(context).inflate(R.layout.mc_calendar_view, this)
         initUiElements()
         onUiCreate()
         initCalendar()
@@ -94,7 +94,7 @@ class CalendarView @JvmOverloads constructor(
      * @param attrs A set of xml attributes
      */
     private fun setAttributes(attrs: AttributeSet?) {
-        context.obtainStyledAttributes(attrs, R.styleable.CalendarView).run {
+        context.obtainStyledAttributes(attrs, R.styleable.mc_CalendarView).run {
             initCalendarProperties(this)
             initAttributes()
             recycle()
@@ -102,35 +102,35 @@ class CalendarView @JvmOverloads constructor(
     }
 
     private fun initCalendarProperties(typedArray: TypedArray) = with(calendarProperties) {
-        headerColor = typedArray.getColor(R.styleable.CalendarView_headerColor, 0)
-        headerLabelColor = typedArray.getColor(R.styleable.CalendarView_headerLabelColor, 0)
-        abbreviationsBarColor = typedArray.getColor(R.styleable.CalendarView_abbreviationsBarColor, 0)
-        abbreviationsLabelsColor = typedArray.getColor(R.styleable.CalendarView_abbreviationsLabelsColor, 0)
-        pagesColor = typedArray.getColor(R.styleable.CalendarView_pagesColor, 0)
-        daysLabelsColor = typedArray.getColor(R.styleable.CalendarView_daysLabelsColor, 0)
-        anotherMonthsDaysLabelsColor = typedArray.getColor(R.styleable.CalendarView_anotherMonthsDaysLabelsColor, 0)
-        todayLabelColor = typedArray.getColor(R.styleable.CalendarView_todayLabelColor, 0)
-        selectionColor = typedArray.getColor(R.styleable.CalendarView_selectionColor, 0)
-        selectionLabelColor = typedArray.getColor(R.styleable.CalendarView_selectionLabelColor, 0)
-        disabledDaysLabelsColor = typedArray.getColor(R.styleable.CalendarView_disabledDaysLabelsColor, 0)
-        highlightedDaysLabelsColor = typedArray.getColor(R.styleable.CalendarView_highlightedDaysLabelsColor, 0)
-        calendarType = typedArray.getInt(R.styleable.CalendarView_type, CLASSIC)
-        maximumDaysRange = typedArray.getInt(R.styleable.CalendarView_maximumDaysRange, 0)
+        headerColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_headerColor, 0)
+        headerLabelColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_headerLabelColor, 0)
+        abbreviationsBarColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_abbreviationsBarColor, 0)
+        abbreviationsLabelsColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_abbreviationsLabelsColor, 0)
+        pagesColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_pagesColor, 0)
+        daysLabelsColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_daysLabelsColor, 0)
+        anotherMonthsDaysLabelsColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_anotherMonthsDaysLabelsColor, 0)
+        todayLabelColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_todayLabelColor, 0)
+        selectionColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_selectionColor, 0)
+        selectionLabelColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_selectionLabelColor, 0)
+        disabledDaysLabelsColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_disabledDaysLabelsColor, 0)
+        highlightedDaysLabelsColor = typedArray.getColor(R.styleable.mc_CalendarView_mc_highlightedDaysLabelsColor, 0)
+        calendarType = typedArray.getInt(R.styleable.mc_CalendarView_mc_type, CLASSIC)
+        maximumDaysRange = typedArray.getInt(R.styleable.mc_CalendarView_mc_maximumDaysRange, 0)
 
-        if (typedArray.hasValue(R.styleable.CalendarView_firstDayOfWeek)) {
-            firstDayOfWeek = typedArray.getInt(R.styleable.CalendarView_firstDayOfWeek, Calendar.MONDAY)
+        if (typedArray.hasValue(R.styleable.mc_CalendarView_mc_firstDayOfWeek)) {
+            firstDayOfWeek = typedArray.getInt(R.styleable.mc_CalendarView_mc_firstDayOfWeek, Calendar.MONDAY)
         }
 
-        eventsEnabled = typedArray.getBoolean(R.styleable.CalendarView_eventsEnabled, calendarType == CLASSIC)
-        swipeEnabled = typedArray.getBoolean(R.styleable.CalendarView_swipeEnabled, true)
-        selectionDisabled = typedArray.getBoolean(R.styleable.CalendarView_selectionDisabled, false)
-        selectionBetweenMonthsEnabled = typedArray.getBoolean(R.styleable.CalendarView_selectionBetweenMonthsEnabled, false)
-        previousButtonSrc = typedArray.getDrawable(R.styleable.CalendarView_previousButtonSrc)
-        forwardButtonSrc = typedArray.getDrawable(R.styleable.CalendarView_forwardButtonSrc)
+        eventsEnabled = typedArray.getBoolean(R.styleable.mc_CalendarView_mc_eventsEnabled, calendarType == CLASSIC)
+        swipeEnabled = typedArray.getBoolean(R.styleable.mc_CalendarView_mc_swipeEnabled, true)
+        selectionDisabled = typedArray.getBoolean(R.styleable.mc_CalendarView_mc_selectionDisabled, false)
+        selectionBetweenMonthsEnabled = typedArray.getBoolean(R.styleable.mc_CalendarView_mc_selectionBetweenMonthsEnabled, false)
+        previousButtonSrc = typedArray.getDrawable(R.styleable.mc_CalendarView_mc_previousButtonSrc)
+        forwardButtonSrc = typedArray.getDrawable(R.styleable.mc_CalendarView_mc_forwardButtonSrc)
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            typeface = typedArray.getFont(R.styleable.CalendarView_typeface)
-            todayTypeface = typedArray.getFont(R.styleable.CalendarView_todayTypeface)
+            typeface = typedArray.getFont(R.styleable.mc_CalendarView_mc_typeface)
+            todayTypeface = typedArray.getFont(R.styleable.mc_CalendarView_mc_todayTypeface)
         }
     }
 
@@ -201,13 +201,13 @@ class CalendarView @JvmOverloads constructor(
     }
 
     private fun setCalendarRowLayout() {
-        if (calendarProperties.itemLayoutResource != R.layout.calendar_view_day) return
+        if (calendarProperties.itemLayoutResource != R.layout.mc_calendar_view_day) return
 
         with(calendarProperties) {
             itemLayoutResource = if (eventsEnabled) {
-                R.layout.calendar_view_day
+                R.layout.mc_calendar_view_day
             } else {
-                R.layout.calendar_view_picker_day
+                R.layout.mc_calendar_view_picker_day
             }
         }
     }

@@ -79,7 +79,7 @@ fun Calendar?.isMonthAfter(secondCalendar: Calendar) = secondCalendar.isMonthBef
  */
 internal fun Calendar.getMonthAndYearDate(context: Context) = String.format(
         "%s  %s",
-        context.resources.getStringArray(R.array.material_calendar_months_array)[this.get(Calendar.MONTH)],
+        context.resources.getStringArray(R.array.mc_material_calendar_months_array)[this.get(Calendar.MONTH)],
         this.get(Calendar.YEAR)
 )
 

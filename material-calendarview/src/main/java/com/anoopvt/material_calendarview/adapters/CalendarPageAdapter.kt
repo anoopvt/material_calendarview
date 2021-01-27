@@ -49,7 +49,7 @@ class CalendarPageAdapter(
     override fun isViewFromObject(view: View, any: Any) = view === any
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        calendarGridView = inflate(context, R.layout.calendar_view_grid, null) as CalendarGridView
+        calendarGridView = inflate(context, R.layout.mc_calendar_view_grid, null) as CalendarGridView
 
         loadMonth(position)
 

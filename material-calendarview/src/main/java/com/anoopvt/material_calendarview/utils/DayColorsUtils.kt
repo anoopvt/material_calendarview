@@ -29,7 +29,7 @@ import java.util.*
 fun TextView.setDayColors(
         textColor: Int,
         typeface: Typeface? = null,
-        backgroundRes: Int = R.drawable.background_transparent
+        backgroundRes: Int = R.drawable.mc_background_transparent
 ) {
     typeface?.let { setTypeface(typeface) }
     setTextColor(textColor)
@@ -39,7 +39,7 @@ fun TextView.setDayColors(
 fun LinearLayout.setDayColors(
     textColor: Int,
     typeface: Typeface? = null,
-    backgroundRes: Int = R.drawable.background_transparent
+    backgroundRes: Int = R.drawable.mc_background_transparent
 ) {
     typeface?.let { setTypeface(typeface) }
    // setTextColor(textColor)
@@ -186,7 +186,7 @@ private fun setTodayColors(calendar: Calendar, dayLabel: TextView, calendarPrope
         dayLabel.setDayColors(
                 textColor = calendarProperties.todayLabelColor,
                 typeface = calendarProperties.todayTypeface,
-                backgroundRes = R.drawable.background_transparent
+                backgroundRes = R.drawable.mc_background_transparent
         )
     }
 
@@ -195,7 +195,7 @@ private fun setTodayColors(calendar: Calendar, dayLabel: TextView, calendarPrope
     if (calendarProperties.todayColor != 0) {
         dayLabel.setDayColors(
                 textColor = calendarProperties.selectionLabelColor,
-                backgroundRes = R.drawable.background_color_circle_selector
+                backgroundRes = R.drawable.mc_background_color_circle_selector
         )
         tintBackground(dayLabel, calendarProperties.todayColor)
     }
@@ -223,7 +223,7 @@ private fun setTodayCelColors(calendar: Calendar, dayLabel: LinearLayout, calend
         dayLabel.setDayColors(
             textColor = calendarProperties.todayLabelColor,
             typeface = calendarProperties.todayTypeface,
-            backgroundRes = R.drawable.background_transparent
+            backgroundRes = R.drawable.mc_background_transparent
         )
     }
 
@@ -232,7 +232,7 @@ private fun setTodayCelColors(calendar: Calendar, dayLabel: LinearLayout, calend
     if (calendarProperties.todayColor != 0) {
         dayLabel.setDayColors(
             textColor = calendarProperties.selectionLabelColor,
-            backgroundRes = R.drawable.background_color_circle_selector
+            backgroundRes = R.drawable.mc_background_color_circle_selector
         )
         tintCelBackground(dayLabel, calendarProperties.todayColor)
     }
@@ -273,7 +273,7 @@ private fun setNormalDayColors(calendar: Calendar, dayLabel: TextView, calendarP
         dayLabel.setDayColors(labelColor)
         dayLabel.setBackgroundDrawable(calendarDayBackgroundDrawable)
     } else {
-        dayLabel.setDayColors(labelColor, backgroundRes = R.drawable.background_transparent)
+        dayLabel.setDayColors(labelColor, backgroundRes = R.drawable.mc_background_transparent)
     }
 }
 
@@ -292,7 +292,7 @@ private fun setNormalDayCelColors(calendar: Calendar, dayLabel: LinearLayout, ca
         dayLabel.setDayColors(labelColor)
         dayLabel.setBackgroundDrawable(calendarDayBackgroundDrawable)
     } else {
-        dayLabel.setDayColors(labelColor, backgroundRes = R.drawable.background_transparent)
+        dayLabel.setDayColors(labelColor, backgroundRes = R.drawable.mc_background_transparent)
     }
 }
 private fun tintBackground(dayLabel: TextView, color: Int) {
