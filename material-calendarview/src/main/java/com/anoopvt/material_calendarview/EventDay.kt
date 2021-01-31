@@ -1,5 +1,6 @@
 package com.anoopvt.material_calendarview
 
+import android.graphics.Color
 import androidx.annotation.ColorInt
 import androidx.annotation.RestrictTo
 import com.anoopvt.material_calendarview.utils.setMidnight
@@ -34,6 +35,7 @@ data class EventDay(val calendar: Calendar) {
 
     constructor(day: Calendar, drawable: String) : this(day) {
         imageDrawable = drawable
+        this.labelColor = Color.BLACK
     }
 
 

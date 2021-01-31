@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.anoopvt.material_calendarview.R
 import com.anoopvt.material_calendarview.CalendarView
@@ -39,16 +40,19 @@ class CalendarDayAdapter(
 
 
         val dayLabel = dayView.findViewById<TextView>(R.id.dayLabel) ?: throw InvalidCustomLayoutException
-        val dayLabel2 = dayView.findViewById<TextView>(R.id.dayIcon)  ?: throw InvalidCustomLayoutException
+       // val dayLabel2 = dayView.findViewById<TextView>(R.id.dayIcon)  ?: throw InvalidCustomLayoutException
+        val layout = dayView.findViewById<LinearLayout>(R.id.calendarDayContainer)  ?: throw InvalidCustomLayoutException
 
         setLabelColors(dayLabel, day)
         dayLabel.typeface = calendarProperties.typeface
         dayLabel.text = day[Calendar.DAY_OF_MONTH].toString()
 
-        setLabelColors(dayLabel2, day)
-        dayLabel2.typeface = calendarProperties.typeface
+      //  setLabelColors(dayLabel2, day)
+      //  dayLabel2.typeface = calendarProperties.typeface
 
         dayView.findViewById<TextView>(R.id.dayIcon).loadIcon(day)
+
+        setCelColors(layout,day)
 
         return dayView
     }
@@ -82,6 +86,22 @@ class CalendarDayAdapter(
 
             // Setting current month day color
             else -> setCurrentMonthDayColors(day, dayLabel, calendarProperties)
+        }
+    }
+
+    private fun setCelColors(dayLabel: LinearLayout, day: Calendar) {
+        when {
+            // Setting not current month day color
+            !day.isCurrentMonthDay() && !calendarProperties.selectionBetweenMonthsEnabled ->
+                dayLabel.setDayColors(calendarProperties.anotherMonthsDaysLabelsColor)
+
+            // Setting view for all SelectedDays
+            day.isSelectedDay() -> {
+                calendarPageAdapter.selectedDays
+                    .firstOrNull { selectedDay -> selectedDay.calendar == day }
+                    ?.let { selectedDay -> selectedDay.view = dayLabel }
+                setSelectedDayColorsNew(dayLabel, day, calendarProperties)
+            }
         }
     }
 
